@@ -32,4 +32,147 @@
  */
 export function calculateCoffeePrice(size, type, extras = {}) {
   // Your code here
+  const lowerCaseSize = size.toLocaleLowerCase()
+  const lowerCaseType = type.toLocaleLowerCase()
+  if(!['small','medium','large'].includes(lowerCaseSize)) {
+    return -1
+  }
+  if(!['regular','latte','cappuccino','mocha'].includes(lowerCaseType)){
+    return -1
+  }
+  switch (lowerCaseSize) {
+    case 'small':
+    switch(lowerCaseType) {
+      case 'regular':
+      if(extras.whippedCream && !extras.extraShot){
+        return 3 + 0 + 0.50
+      }else if(extras.extraShot && !extras.whippedCream){
+        return 3 + 0 + 0.75
+      }else if (extras.whippedCream && extras.extraShot) {
+        return 3 + 0 + 0.75 + 0.50
+      }else {
+        return 3 + 0
+      }
+      case 'latte':
+      if(extras.whippedCream && !extras.extraShot){
+        return 3 + 1 + 0.50
+      }else if(extras.extraShot && !extras.whippedCream){
+        return 3 + 1 + 0.75
+      }else if (extras.whippedCream && extras.extraShot) {
+        return 3 + 1 + 0.75 + 0.50
+      }else {
+        return 3 + 1
+      }
+      case 'cappuccino':
+      if(extras.whippedCream && !extras.extraShot){
+        return 3 + 1.5 + 0.50
+      }else if(extras.extraShot && !extras.whippedCream){
+        return 3 + 1.5 + 0.75
+      }else if (extras.whippedCream && extras.extraShot) {
+        return 3 + 1.5 + 0.75 + 0.50
+      }else {
+        return 3 + 1.5
+      }
+      case 'mocha':
+      if(extras.whippedCream && !extras.extraShot){
+        return 3 + 2 + 0.50
+      }else if(extras.extraShot && !extras.whippedCream){
+        return 3 + 2 + 0.75
+      }else if (extras.whippedCream && extras.extraShot) {
+        return 3 + 2 + 0.75 + 0.50
+      }else {
+        return 3 + 2
+      }
+      
+    }
+    break;
+    case 'medium':
+    switch(lowerCaseType) {
+        case 'regular':
+      if(extras.whippedCream && !extras.extraShot){
+        return 4 + 0 + 0.50
+      }else if(extras.extraShot && !extras.whippedCream){
+        return 4 + 0 + 0.75
+      }else if (extras.whippedCream && extras.extraShot) {
+        return 4 + 0 + 0.75 + 0.50
+      }else {
+        return 4 + 0
+      }
+      case 'latte':
+      if(extras.whippedCream && !extras.extraShot){
+        return 4 + 1 + 0.50
+      }else if(extras.extraShot && !extras.whippedCream){
+        return 4 + 1 + 0.75
+      }else if (extras.whippedCream && extras.extraShot) {
+        return 4 + 1 + 0.75 + 0.50
+      }else {
+        return 4 + 1
+      }
+      case 'cappuccino':
+      if(extras.whippedCream && !extras.extraShot){
+        return 4 + 1.5 + 0.50
+      }else if(extras.extraShot && !extras.whippedCream){
+        return 4 + 1.5 + 0.75
+      }else if (extras.whippedCream && extras.extraShot) {
+        return 4 + 1.5 + 0.75 + 0.50
+      }else {
+        return 4 + 1.5
+      }
+      case 'mocha':
+      if(extras.whippedCream && !extras.extraShot){
+        return 4 + 2 + 0.50
+      }else if(extras.extraShot && !extras.whippedCream){
+        return 4 + 2 + 0.75
+      }else if (extras.whippedCream && extras.extraShot) {
+        return 4 + 2 + 0.75 + 0.50
+      }else {
+        return 4 + 2
+      }
+    }
+    break;
+    case 'large':
+    switch(lowerCaseType) {
+       case 'regular':
+      if(extras.whippedCream && !extras.extraShot){
+        return 5 + 0 + 0.50
+      }else if(extras.extraShot && !extras.whippedCream){
+        return 5 + 0 + 0.75
+      }else if (extras.whippedCream && extras.extraShot) {
+        return 5 + 0 + 0.75 + 0.50
+      }else {
+        return 5 + 0
+      }
+      case 'latte':
+      if(extras.whippedCream && !extras.extraShot){
+        return 5 + 1 + 0.50
+      }else if(extras.extraShot && !extras.whippedCream){
+        return 5 + 1 + 0.75
+      }else if (extras.whippedCream && extras.extraShot) {
+        return 5 + 1 + 0.75 + 0.50
+      }else {
+        return 5 + 1
+      }
+      case 'cappuccino':
+      if(extras.whippedCream && !extras.extraShot){
+        return 5 + 1.5 + 0.50
+      }else if(extras.extraShot && !extras.whippedCream){
+        return 5 + 1.5 + 0.75
+      }else if (extras.whippedCream && extras.extraShot) {
+        return 5 + 1.5 + 0.75 + 0.50
+      }else {
+        return 5 + 1.5
+      }
+      case 'mocha':
+      if(extras.whippedCream && !extras.extraShot){
+        return 5 + 2 + 0.50
+      }else if(extras.extraShot && !extras.whippedCream){
+        return 5 + 2 + 0.75
+      }else if (extras.whippedCream && extras.extraShot) {
+        return 5 + 2 + 0.75 + 0.50
+      }else {
+        return 5 + 2
+      }
+    }
+    break;
+  }
 }

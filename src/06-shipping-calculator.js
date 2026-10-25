@@ -30,4 +30,67 @@
  */
 export function calculateShipping(weight, country, orderTotal) {
   // Your code here
+  
+  if(orderTotal%1 !==0) {
+    return
+  }
+  
+  const countryName = country.toLocaleLowerCase()
+  if(weight <=0 || orderTotal <0) {
+    return -1
+  }
+  
+  if(countryName==='us') {
+  if(weight>0 && weight<=1) {
+   const shippingCost = 5
+   const totalCost = shippingCost + orderTotal
+   if(orderTotal >50) {
+    return 0
+   }else {
+    return shippingCost
+   }
+  }else if(weight>0 && weight<=5) {
+   const shippingCost = 10
+   const totalCost = shippingCost + orderTotal
+   if(orderTotal >50) {
+    return 0
+   }else {
+    return shippingCost
+   }
+  }else if(weight>5) {
+   const shippingCost = 15
+   const totalCost = shippingCost + orderTotal
+   if(orderTotal >50) {
+    return 0
+   }else {
+    return shippingCost
+   }
+  }
+  }else {
+  if(weight>0 && weight<=1) {
+   const shippingCost = 15
+   const totalCost = shippingCost + orderTotal
+   if(orderTotal >100) {
+    return 0
+   }else {
+    return shippingCost
+   }
+  }else if(weight>0 && weight<=5) {
+   const shippingCost = 25
+   const totalCost = shippingCost + orderTotal
+   if(orderTotal >100) {
+    return 0
+   }else {
+    return shippingCost
+   }
+  }else if(weight>5) {
+   const shippingCost = 40
+   const totalCost = shippingCost + orderTotal
+   if(orderTotal >100) {
+    return 0
+   }else {
+    return shippingCost
+   }
+  }
+  }
 }
